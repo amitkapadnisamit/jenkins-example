@@ -30,7 +30,7 @@ pipeline {
         }
         stage ('Sonar stage'){
             steps{
-                withSonarQubeEnv(Sonar){
+                withSonarQubeEnv('Sonar'){
                     withMaven(maven : 'MavenAmit'){
                         sh 'mvn clean package sonar:sonar'
                     }
